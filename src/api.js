@@ -6,7 +6,7 @@ const json = async (res) => {
 const send = (method, url, body) =>
   fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).then(json);
 
-const API_BASE = import.meta.env.VITE_API_URL || '';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://salary-manager-backend-1.onrender.com';
 
 export const api = {
   employees: (params) => fetch(`${API_BASE}/api/employees?${new URLSearchParams(params)}`).then(json),
